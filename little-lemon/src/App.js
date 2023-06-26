@@ -3,7 +3,9 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import OnlineOrder from './components/OnlineOrder';
 import ReserveTable from './components/ReserveTable';
+import Footer from './components/Footer';
 import {Routes, Route} from "react-router-dom"
+
 function App() {
   return(
     <>
@@ -15,6 +17,7 @@ function App() {
           <Route path = "/onlineorder" element = {<OnlineOrder/>} />
         </Routes>
       </div>
+      <Footer/>
     </>
   )
 }
