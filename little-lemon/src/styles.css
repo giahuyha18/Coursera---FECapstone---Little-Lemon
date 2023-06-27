@@ -50,3 +50,17 @@ body{
 .nav li:hover{
     background-color: rgb(11, 91, 161);
 }
+
+.container-form{
+    background-color: aqua;
+    margin: auto;
+    box-sizing: content-box;
+    width: 60%;
+    text-align: center;
+
+}
+
+.form{
+    margin: 1rem;
+    padding: 2rem;
+}
