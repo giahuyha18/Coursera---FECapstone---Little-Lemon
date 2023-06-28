@@ -1,3 +1,5 @@
+import { HStack, Box, Heading } from '@chakra-ui/react'
+import DishesCard from './DishesCard'
 const weeklyDishesStyles =  {
     backgroundColor: 'black',
     color: 'white'
@@ -5,7 +7,14 @@ const weeklyDishesStyles =  {
 function WeeklySpecialDishes(){
     return(
         <div className="WeeklyDishes" style ={weeklyDishesStyles}>
-            <h1>Weekly Dishes</h1>
+            <Box margin={'auto'} padding={50}>
+                <Heading paddingBottom={5}>Weekly Dishes</Heading>
+                <HStack spacing = {6}>
+                <DishesCard title = {'Calamari'} description = {'Delicious'} imageSrc={require('./lemondessert.jpg')}/>
+                <DishesCard title = {'Calamari'} description = {'Delicious'} imageSrc={require('./lemondessert.jpg')}/>
+                <DishesCard title = {'Calamari'} description = {'Delicious'} imageSrc={require('./lemondessert.jpg')}/>
+                </HStack>
+            </Box>
         </div>
     )
 }
