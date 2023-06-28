@@ -1,0 +1,16 @@
+.container-form{
+    background-color: #ecf1ede7;
+    display: block;
+    align-items: left;
+}
+
+select::-ms-expand {
+    display: none;
+  }
+
+.selectNumDiners::-ms-expand{
+    display: none;
+    color: red;
+    background-color: rgb(243, 245, 247);
+}
+

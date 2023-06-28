@@ -1,13 +1,13 @@
+import { useState } from "react";
 import CustomerInfoForm from "./ReserveTaleComponents/CustomerInfo"
 import TableBookingForm from "./ReserveTaleComponents/TableBooking"
+import useSubmit from "./hooks/useSubmit";
+import Alert from "./Alert";
 
 export default function ReserveTable(){
-    let tableFormDone = false;
-    let formDisplay;
-    tableFormDone ? formDisplay = <CustomerInfoForm/>: formDisplay = <TableBookingForm/>;
     return(
-        <div className = "container-form">
-            {formDisplay}
-        </div>
+            <div className = "container-form">
+                <TableBookingForm/>
+            </div>
     )
 }
