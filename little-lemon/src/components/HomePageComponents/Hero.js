@@ -19,7 +19,7 @@ function Hero(){
                         <Image
                             height = "457px"
                             width = "375px"
-                            objectFit='cover'
+                            marginBottom={-20}
                             src={require('./heroImage.jpg')}
                             alt='hero image'
                             borderRadius={16}

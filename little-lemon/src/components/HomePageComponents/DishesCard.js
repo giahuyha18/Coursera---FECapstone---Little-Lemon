@@ -1,21 +1,22 @@
-import {Card, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, Button} from  '@chakra-ui/react'
+import {Card,CardBody, CardFooter, Image, Stack, Heading, Text, Divider, Button, CardHeader} from  '@chakra-ui/react'
 
 const DishesCard = ({title, description, imageSrc}) => {
     return(
-        <Card maxW='sm'>
-        <CardBody>
+        <Card maxW='md' borderTopRadius={26} bg = 'white'>
+        <CardHeader padding={-5}>
           <Image
-            src={imageSrc}
-            borderRadius='lg'
-            border={'solid'}
-          />
-          <Stack mt='6' spacing='3'>
+              src={imageSrc}
+              borderRadius='26'
+            />
+        </CardHeader>
+        <CardBody>
+          <Stack mt='6' spacing='2'>
             <Heading size='md'>{title}</Heading>
             <Text>
               {description}
             </Text>
             <Text color='blue.600' fontSize='2xl'>
-              $450
+              $26
             </Text>
           </Stack>
         </CardBody>
