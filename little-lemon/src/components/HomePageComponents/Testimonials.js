@@ -9,8 +9,7 @@ function Testimonials(){
         <div className="Testimonials" style={testimonialsStyles}>
             <Box
             maxW='100%'
-            bg = {'#495E57'}
-            color={"white"}
+            color={"black"}
             borderRadius={36}
             marginBottom={10}
             fontFamily={'Georgia, Times New Roman, Times, serif'}

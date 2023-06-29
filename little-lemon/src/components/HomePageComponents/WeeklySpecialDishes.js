@@ -7,7 +7,6 @@ const weeklyDishesStyles =  {
 function WeeklySpecialDishes(){
     return(
         <div className="WeeklyDishes" style ={weeklyDishesStyles}>
-        
         <Box
             marginTop={10}
             marginBottom={10}
