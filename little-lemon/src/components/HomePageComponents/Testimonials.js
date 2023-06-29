@@ -1,5 +1,5 @@
 import TestimonialsCard from "./TestimonialCard"
-import { HStack, Box, Heading } from "@chakra-ui/react";
+import { HStack, Box, Heading, Text } from "@chakra-ui/react";
 const testimonialsStyles ={
     backgroundColor: 'white',
     color: 'white'
@@ -7,28 +7,29 @@ const testimonialsStyles ={
 function Testimonials(){
     return(
         <div className="Testimonials" style={testimonialsStyles}>
-            <Box 
-            bg = {'#495E57'} 
-            color={"black"} 
-            borderRadius={36} 
-            marginLeft={20} 
-            marginRight={20}
-
+            <Box
+            maxW='100%'
+            bg = {'#495E57'}
+            color={"white"}
+            borderRadius={36}
+            marginBottom={10}
+            fontFamily={'Georgia, Times New Roman, Times, serif'}
             >
-                <Box display={'flex'} justifyContent={'center'}>
-                    <Heading>Testimonials</Heading>
+                <Box display={'flex'} justifyContent={'center'} paddingTop={10}>
+                    <Text fontSize={'50px'}>Testimonials</Text>
                 </Box>
                 <Box
                 display={'flex'}
                 justifyContent={'center'}
                 alignItems = {'center'}
-                padding={10}>
-                    <HStack spacing = {5}>
+                padding={10}
+                >
+                    <HStack spacing = {50}>
                         <TestimonialsCard testimonialName = {'Dan Abrahmov'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was great'}
                         />
-                        <TestimonialsCard testimonialName = {'Dan Abrahmov'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was great'}
+                        <TestimonialsCard testimonialName = {'George Kim'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was ok'}
                         />
-                        <TestimonialsCard testimonialName = {'Dan Abrahmov'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was great'}
+                        <TestimonialsCard testimonialName = {'Donald Rosling'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was comfortable'}
                         />
                     </HStack>
                 </Box>

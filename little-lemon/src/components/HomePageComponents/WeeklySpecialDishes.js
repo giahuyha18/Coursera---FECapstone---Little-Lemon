@@ -27,9 +27,9 @@ function WeeklySpecialDishes(){
                 padding={25}
                 >
                 <HStack spacing = {50}>
-                    <DishesCard title = {'Calamari'} description = {'Delicious'} imageSrc={require('./lemondessert.jpg')}/>
-                    <DishesCard title = {'Calamari'} description = {'Delicious'} imageSrc={require('./lemondessert.jpg')}/>
-                    <DishesCard title = {'Calamari'} description = {'Delicious'} imageSrc={require('./lemondessert.jpg')}/>
+                    <DishesCard title = {'Calamari'} description = {'As iconic as usual fried squids'} imageSrc={require('./calamariDish.jpg')}/>
+                    <DishesCard title = {'Moussaka'} description = {'An Greek eggplant-lamb-based dish.'} imageSrc={require('./moussakaDish.jpg')}/>
+                    <DishesCard title = {'Calamari'} description = {'An Greek dessert!'} imageSrc={require('./baklavaDish2.jpg')}/>
                 </HStack>
             </Box>
         </Box>

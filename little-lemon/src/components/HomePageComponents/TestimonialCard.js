@@ -1,20 +1,19 @@
-import {Avatar, Card, CardBody, CardHeader, CardFooter, Button, Text, Heading, HStack, Divider} from  '@chakra-ui/react'
+import {Avatar, Box, Card, CardBody, CardHeader, CardFooter, Button, Text, Heading, HStack, Divider} from  '@chakra-ui/react'
 const TestimonialsCard = ({avatarSrc, testimonialName, comment}) =>{
     return(
-    <Card>
+    <Card fontFamily={'Georgia, Times New Roman, Times, serif'}>
         <CardHeader>
-          <HStack>
-            <Avatar src= {avatarSrc}/>
-            <Heading size='md'>{testimonialName}</Heading>
-          </HStack>
+          <Box>
+            <HStack>
+              <Avatar src= {avatarSrc}/>
+              <Heading size='md'>{testimonialName}</Heading>
+            </HStack>
+          </Box>
         </CardHeader>
         <Divider/>
         <CardBody>
           <Text>{comment}</Text>
         </CardBody>
-        <CardFooter>
-          <Button>See More</Button>
-        </CardFooter>
     </Card>
     );
 }
