@@ -1,23 +1,23 @@
 import { Box, HStack, VStack, Heading, Text, Image, Container, Button, ButtonGroup } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 export default function Footer(){
     return(
         <>
             <div style={{backgroundColor: '#495E57'}}>
-                Footer
                 <Box display={'flex'} justifyContent={'center'} paddingBottom={10} bg={'#495E57'}>
-                    <Box>
-                        <HStack spacing={20}>
+                    <Box padding={10}>
+                        <HStack spacing={20} alignItems={'-moz-initial'}>
                             <Box display = {'flex'}  justifyContent={'center'} alignItems={'center'}>
-                                <Image boxSize = {'150px'} src = {require('./bwmLogo.png')}/>
+                                <Image boxSize = {'150px'} src = {require('./globalAssets/footerLogo.jpg')}/>
                             </Box>
                             <Box>
                                 <ButtonGroup>
                                     <VStack align={'stretch'}>
                                         <Heading>Navigation</Heading>
-                                        <Button>Home</Button>
-                                        <Button>About</Button>
-                                        <Button>Reservation</Button>
-                                        <Button>Order Online</Button>
+                                        <Link to="">Home</Link>
+                                        <Link to="/reservetable">Reserve Table</Link>
+                                        <Link to = "/orderonline"> Order Online</Link>
+                                        <Link></Link>
                                     </VStack>
                                 </ButtonGroup>
                             </Box>

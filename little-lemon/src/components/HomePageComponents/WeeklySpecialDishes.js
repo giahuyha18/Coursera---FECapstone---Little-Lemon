@@ -1,5 +1,5 @@
-import { HStack, Box, Heading, Text } from '@chakra-ui/react'
-import DishesCard from './DishesCard'
+import { HStack, Box, Text } from '@chakra-ui/react'
+import DishesCard from './homepageCards/DishesCard'
 const weeklyDishesStyles =  {
     backgroundColor: 'white',
     color: 'black'
@@ -27,9 +27,9 @@ function WeeklySpecialDishes(){
                 padding={25}
                 >
                 <HStack spacing = {50}>
-                    <DishesCard title = {'Calamari'} description = {'As iconic as usual fried squids'} imageSrc={require('./calamariDish.jpg')}/>
-                    <DishesCard title = {'Moussaka'} description = {'An Greek eggplant-lamb-based dish.'} imageSrc={require('./moussakaDish.jpg')}/>
-                    <DishesCard title = {'Calamari'} description = {'An Greek dessert!'} imageSrc={require('./baklavaDish2.jpg')}/>
+                    <DishesCard title = {'Calamari'} description = {'As iconic as usual fried squids'} imageSrc={require('./homepageAssets/calamariDish.jpg')}/>
+                    <DishesCard title = {'Moussaka'} description = {'An Greek eggplant-lamb-based dish.'} imageSrc={require('./homepageAssets/moussakaDish.jpg')}/>
+                    <DishesCard title = {'Calamari'} description = {'An Greek dessert!'} imageSrc={require('./homepageAssets/baklavaDish2.jpg')}/>
                 </HStack>
             </Box>
         </Box>

@@ -1,4 +1,4 @@
-import TestimonialsCard from "./TestimonialCard"
+import TestimonialsCard from "./homepageCards/TestimonialCard"
 import { HStack, Box, Heading, Text } from "@chakra-ui/react";
 const testimonialsStyles ={
     backgroundColor: 'white',
@@ -25,11 +25,11 @@ function Testimonials(){
                 padding={10}
                 >
                     <HStack spacing = {50}>
-                        <TestimonialsCard testimonialName = {'Dan Abrahmov'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was great'}
+                        <TestimonialsCard testimonialName = {'Dan Abrahmov'} avatarSrc = {require('./homepageAssets/restaurantchefB.jpg')} comment = {'It was great'}
                         />
-                        <TestimonialsCard testimonialName = {'George Kim'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was ok'}
+                        <TestimonialsCard testimonialName = {'George Kim'} avatarSrc = {require('./homepageAssets/restaurantchefB.jpg')} comment = {'It was ok'}
                         />
-                        <TestimonialsCard testimonialName = {'Donald Rosling'} avatarSrc = {require('./restaurantchefB.jpg')} comment = {'It was comfortable'}
+                        <TestimonialsCard testimonialName = {'Donald Rosling'} avatarSrc = {require('./homepageAssets/restaurantchefB.jpg')} comment = {'It was comfortable'}
                         />
                     </HStack>
                 </Box>

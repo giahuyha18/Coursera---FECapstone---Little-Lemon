@@ -17,6 +17,7 @@ import {
     Textarea,
     VStack,
     HStack,
+    Text
   } from "@chakra-ui/react";
 import "./formStyles.css";
 
@@ -45,64 +46,70 @@ export const CustomerInfoForm = () =>{
       if (response) {
         onOpen(response.type, response.message);
         // Reset the form if the response is successful
-        if (response.type === "error")
-          formik.resetForm();
-      }
+        formik.resetForm();}
     }, [response]);
     return(
         <ChakraProvider>
-            <VStack>
-                <Heading>Your Contact Info</Heading>
-                <Box>
-                <form onSubmit={formik.handleSubmit}>
+            <Box
+            bg={'radial-gradient(circle, rgba(73,94,87,0.7959558823529411) 28%, rgba(244,206,20,0.958420868347339) 100%)'}
+            fontFamily={'Georgia, Times New Roman, Times, serif'}
+            marginTop={10}
+            padding={10}
+            borderRadius={25}>
+                <VStack spacing={25}>
+                    <Text fontSize={'2.5em'}>Your Contact Info</Text>
                     <Box>
-                        <FormControl isInvalid={!!formik.errors.reservationName && formik.touched.reservationName}>
-                            <FormLabel htmlFor="reservationName">Reservation Name</FormLabel>
+                    <form onSubmit={formik.handleSubmit}>
+                        <Box padding={5}>
+                            <FormControl isInvalid={!!formik.errors.reservationName && formik.touched.reservationName}>
+                                <FormLabel htmlFor="reservationName">Reservation Name</FormLabel>
+                                    <Input
+                                        bg = 'white'
+                                        id="reservationName"
+                                        name="reservationName"
+                                        {...formik.getFieldProps("reservationName")} // Make the Input components from Chakra UI controlled components
+                                        />
+                                        {/* Show the error messages for each field when the field is touched and the validation fails */}
+                                    <FormErrorMessage>{formik.errors.reservationName}</FormErrorMessage>
+                            </FormControl>
+                        </Box>
+                        <Box padding={5}>
+                            <FormControl isInvalid={!!formik.errors.email && formik.touched.email}>
+                                {/* Show the error messages for each field when the field is touched and the validation fails */}
+                                <FormLabel htmlFor="email">Email Address</FormLabel>
                                 <Input
                                     bg = 'white'
-                                    id="reservationName"
-                                    name="reservationName"
-                                    {...formik.getFieldProps("reservationName")} // Make the Input components from Chakra UI controlled components
-                                    />
-                                    {/* Show the error messages for each field when the field is touched and the validation fails */}
-                                <FormErrorMessage>{formik.errors.reservationName}</FormErrorMessage>
-                        </FormControl>
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    {...formik.getFieldProps("email")} // Make the Input components from Chakra UI controlled components
+                                />
+                                {/* Show the error messages for each field when the field is touched and the validation fails */}
+                                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+                            </FormControl>
+                        </Box>
+                        <Box padding={5}>
+                            <FormControl isInvalid={!!formik.errors.comment && formik.touched.comment}>
+                                <FormLabel>Your special request(Optional)</FormLabel>
+                                <Textarea
+                                    bg = 'white'
+                                    id="specialRequest"
+                                    name="specialRequest"
+                                    height={250}
+                                    {...formik.getFieldProps("specialRequest")}
+                                />
+                                {/* Show the error messages for each field when the field is touched and the validation fails */}
+                                <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
+                            </FormControl>
+                        </Box>
+                        <Button padding={5} type="submit" width="full">
+                            Reserve Your Table
+                        </Button>
+                    </form>
                     </Box>
-                    <Box>
-                        <FormControl isInvalid={!!formik.errors.email && formik.touched.email}>
-                            {/* Show the error messages for each field when the field is touched and the validation fails */}
-                            <FormLabel htmlFor="email">Email Address</FormLabel>
-                            <Input
-                                bg = 'white'
-                                id="email"
-                                name="email"
-                                type="email"
-                                {...formik.getFieldProps("email")} // Make the Input components from Chakra UI controlled components
-                            />
-                            {/* Show the error messages for each field when the field is touched and the validation fails */}
-                            <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-                        </FormControl>
-                    </Box>
-                    <Box>
-                        <FormControl isInvalid={!!formik.errors.comment && formik.touched.comment}>
-                            <FormLabel>Your special request(Optional)</FormLabel>
-                            <Textarea
-                                bg = 'white'
-                                id="specialRequest"
-                                name="specialRequest"
-                                height={250}
-                                {...formik.getFieldProps("specialRequest")}
-                            />
-                            {/* Show the error messages for each field when the field is touched and the validation fails */}
-                            <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
-                        </FormControl>
-                    </Box>
-                    <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading}>
-                        Reserve Your Table
-                    </Button>
-                </form>
-                </Box>
-            </VStack>
+                </VStack>
+            </Box>
+            
         </ChakraProvider>
     )
 }

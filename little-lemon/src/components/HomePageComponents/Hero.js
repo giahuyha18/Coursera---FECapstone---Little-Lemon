@@ -47,7 +47,7 @@ function Hero(){
                             height = "457px"
                             width = "375px"
                             marginBottom={-40}
-                            src={require('./heroImage.jpg')}
+                            src={require('./homepageAssets/heroImage.jpg')}
                             alt='hero image'
                             borderRadius={16}
                         />

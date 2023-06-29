@@ -7,19 +7,17 @@ const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
  * It uses Math.random() to simulate a random success or failure, with 50% chance of each
  */
 const useSubmitCusInfo = () => {
-  const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
   const submit = async (url, data) => {
     const random = Math.random()*10;
-    setLoading(true);
     setResponse({
       type: 'success',
-      message: `Thank you for reserving your table ${data.reservationName}!\nYour confirmation number is: #${random}`,
+      message: `Thank you for reserving your table, ${data.reservationName}!\nYour confirmation number is: #${random}`,
     })
   };
 
-  return { isLoading, response, submit };
+  return {response, submit };
 }
 
 export default useSubmitCusInfo;

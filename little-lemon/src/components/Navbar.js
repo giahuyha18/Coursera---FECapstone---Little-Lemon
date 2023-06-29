@@ -4,12 +4,12 @@ export default function Navbar(){
     return (
     <nav className = "nav">
         <Link to = "/" className = "site-title">
-            <img src = {require('./Logo.png')} alt = "HomeLogo"/>
+            <img src = {require('./globalAssets/Logo.png')} alt = "HomeLogo"/>
         </Link>
         <ul>
             <CustomLink to = "">Home</CustomLink>
             <CustomLink to = "/reservetable">Reserve Table</CustomLink>
-            <CustomLink to = "/underConstruction">Menu</CustomLink>
+            <CustomLink to = "/menu">Menu</CustomLink>
             <CustomLink to = "/onlineorder">Online Order</CustomLink>
         </ul>
     </nav>)

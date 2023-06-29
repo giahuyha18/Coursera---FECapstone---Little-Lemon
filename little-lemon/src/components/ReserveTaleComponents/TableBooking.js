@@ -18,6 +18,7 @@ import {
     Textarea,
     VStack,
     HStack,
+    Text,
   } from "@chakra-ui/react";
 import "./formStyles.css";
 import CustomerInfoForm from './CustomerInfo';
@@ -25,13 +26,16 @@ import CustomerInfoForm from './CustomerInfo';
 function InOutDiningOnly() {
     const [value, setValue] = React.useState('Both')
     return (
-      <RadioGroup onChange={setValue} value={value} size = 'sm' >
-        <VStack direction='row' spacing={2} margin={2}>
-          <Radio w = '100%' value='Indoor Only' borderColor={'green'} >Indoor Only</Radio>
-          <Radio w = '100%' value='Outdoor Only' borderColor={'green'}>Outdoor Only</Radio>
-          <Radio w = '100%' value='Both' borderColor={'green'}>Both</Radio>
-        </VStack>
+      <Box paddingRight={5} paddingTop={2} paddingBottom={2}>
+        <RadioGroup onChange={setValue} value={value} size = 'sm' >
+          <VStack direction='row' spacing={2} margin={2}>
+            <Radio w = '100%' value='Indoor Only' borderColor={'green'} >Indoor Only</Radio>
+            <Radio w = '100%' value='Outdoor Only' borderColor={'green'}>Outdoor Only</Radio>
+            <Radio w = '100%' value='Both' borderColor={'green'}>Both</Radio>
+          </VStack>
       </RadioGroup>
+      </Box>
+
     )
   }
 
@@ -66,47 +70,55 @@ export const TableBookingForm = () =>{
     const displayCusInfo = isTableFormDone ? <CustomerInfoForm/> : "";
     return(
         <ChakraProvider>
-            <VStack className ="container-form" spacing = "7">
-                <Heading as='h2' size='xl'>Table Details</Heading>
+          <Box
+          bg={'radial-gradient(circle, rgba(73,94,87,0.7959558823529411) 28%, rgba(244,206,20,0.958420868347339) 100%)'}
+          fontFamily={'Georgia, Times New Roman, Times, serif'}
+          marginTop={10}
+          padding={10}
+          borderRadius={25}
+          >
+              <VStack spacing = "7">
+                <Text fontSize={'2.5em'}>Table Details</Text>
                 <Box>
-                    <form onSubmit={formik.handleSubmit}>
-                        <Box w = '100%'>
-                            <FormControl>
-                                <FormLabel>Number of Diners</FormLabel>
-                                <Select
-                                id = "numDiners"
-                                size = 'md'
-                                bg = "white"
-                                className = "selectNumDiners"
-                                {...formik.getFieldProps("numDiners")}>
-                                    <option value='1-2'>1-2</option>
-                                    <option value='3-4'>3-4</option>
-                                    <option value='5-6'>5-6</option>
-                                    <option value='7-8'>7-8</option>
-                                    <option value='More than 8'>More than 8</option>
-                                </Select>
-                            </FormControl>
-                        </Box>
-                        <Box w='100%'>
-                            <FormControl isInvalid={!!formik.errors.dateTime && formik.touched.dateTime}>
-                                <FormLabel>Date and Time</FormLabel>
-                                <Input
-                                id='dateTime'
-                                type = "datetime-local"
-                                bg = 'white' size = 'sm' placeholder='Select Date and Time'
-                                {...formik.getFieldProps("dateTime")}
-                                />
-                                <FormErrorMessage>{formik.errors.dateTime}</FormErrorMessage>
-                            </FormControl>
-                        </Box>
-                        {InOutDiningOnly()}
-                        <Button type = "submit" colorScheme='orange' size='sm' isLoading={isLoading}>Check Availability</Button>
-                    </form>
+                  <form onSubmit={formik.handleSubmit}>
+                    <Box w = '100%' padding={5}>
+                        <FormControl>
+                            <FormLabel>Number of Diners</FormLabel>
+                            <Select
+                            id = "numDiners"
+                            size = 'md'
+                            bg = "white"
+                            className = "selectNumDiners"
+                            {...formik.getFieldProps("numDiners")}>
+                                <option value='1-2'>1-2</option>
+                                <option value='3-4'>3-4</option>
+                                <option value='5-6'>5-6</option>
+                                <option value='7-8'>7-8</option>
+                                <option value='More than 8'>More than 8</option>
+                            </Select>
+                        </FormControl>
+                    </Box>
+                    <Box w='100%' padding={5}>
+                        <FormControl isInvalid={!!formik.errors.dateTime && formik.touched.dateTime}>
+                            <FormLabel>Date and Time</FormLabel>
+                            <Input
+                            id='dateTime'
+                            type = "datetime-local"
+                            bg = 'white' size = 'sm' placeholder='Select Date and Time'
+                            {...formik.getFieldProps("dateTime")}
+                            />
+                            <FormErrorMessage>{formik.errors.dateTime}</FormErrorMessage>
+                        </FormControl>
+                    </Box>
+                    {InOutDiningOnly()}
+                    <Button padding={5} type = "submit" size='sm' isLoading={isLoading}>Check Availability</Button>
+                  </form>
                 </Box>
-                <Box>
-                  {displayCusInfo}
-                </Box>
-            </VStack>
+              </VStack>
+          </Box>
+          <Box>
+            {displayCusInfo}
+          </Box>
         </ChakraProvider>
     )
 }
